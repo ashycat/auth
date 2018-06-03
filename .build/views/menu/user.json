@@ -1,0 +1,24 @@
+[
+ {
+   name: '권한검토 조회',
+   url: '/authreview',
+   path: 'common/authreview',
+   roles: ['all'],
+   visible:true,
+   deps: [
+         ],
+   desc : ''
+ },
+ {
+   name: '권한검토 수행',
+   url: '/common/authreviewExc',
+   path: 'common/authreviewExc',
+   roles: ['all'],
+   visible:true,
+   deps: [
+         ],
+   desc : 'USER'
+ }
+
+
+]

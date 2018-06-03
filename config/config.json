@@ -32,9 +32,9 @@
 
     "databaseConfig": {
         "host": "127.0.0.1",
-        "user": "camel",
-        "password": "q1w2e3r4",
-        "database": "camel"
+        "user": "root",
+        "password": "123456",
+        "database": "MySql"
     },
 
     "testDatabaseConfig": {

@@ -1,0 +1,58 @@
+[
+ {
+   name: '권한검토 조회',
+   url: '/authreview',
+   path: 'common/authreview',
+   roles: ['all'],
+   visible:true,
+   deps: [
+         ],
+   desc : ''
+ },
+ {
+   name: '권한검토 수행',
+   url: '/common/authreviewExc',
+   path: 'common/authreviewExc',
+   roles: ['all'],
+   visible:true,
+   deps: [
+         ],
+   desc : 'USER'
+ },
+ {
+   name: '권한검토 현황',
+   url: '/admin/authreviewStatus',
+   path: 'admin/authreviewStatus',
+   roles: ['admin'],
+   visible:true,
+   deps: [
+   		'controllers/admin/role_group/grouproleListController',
+   		'controllers/admin/role_group/showGroupUserController',
+   		'controllers/admin/role_group/addRoleGroupController'
+         ],
+   desc : 'V1.0'
+
+ },
+ {
+   name : '권한조회/수정',
+   url: '/admin/authreviewMod',
+   path : 'admin/authreviewMod',
+   roles: ['admin'],
+   visible:true,
+   deps : [
+           ]
+ },
+ {
+   name: '검토메일발신',
+   url: '/admin/authreviewMail',
+   path: 'admin/authreviewMail',
+   roles: ['admin'],
+   visible:true,
+   deps: [
+            'controllers/common/helpdesk/showMessageController',
+            'controllers/common/helpdesk/addMessageController'
+           ],
+   desc : '관리자'
+ }
+
+]

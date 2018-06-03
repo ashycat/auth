@@ -388,3 +388,31 @@ table a, #comments a{background-color:inherit;}
 	.latest ul li figure img{width:100%;}
 	.latest ul li figure figcaption{padding:15px 30px;}
 }
+
+/* other*/
+
+.button {
+  background: #76B3FA;
+  border-radius: 100px;
+  padding: 1px 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  margin: 5px;
+}
+
+/* Hover state animation applied here */
+.button:hover { 
+  -webkit-animation: hover 1200ms linear 2 alternate;
+  animation: hover 1200ms linear 2 alternate;
+}
+
+/* Active state animation applied here */
+.button:active {
+  -webkit-animation: active 1200ms ease 1 alternate;
+  animation: active 1200ms ease 1 alternate; 
+  background: #5F9BE0;
+}
+.gray { background: #D2D2D2; }
+.gray:active { background: #b9b9b9; }
+
