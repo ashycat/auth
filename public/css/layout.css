@@ -245,7 +245,10 @@ td{border-width:0 1px;}
 body{color:#888888; background-color:#FFFFFF;}
 a{color:#96AFAA;}
 hr, .borderedbox{border-color:#D7D7D7;}
-label span{color:#FF0000; background-color:inherit;}
+
+
+
+
 
 .icon{color:#FFFFFF; background-color:#000000;}
 .icon.nobg{color:inherit; background-color:inherit; border-color:#D7D7D7;}
@@ -402,7 +405,7 @@ table a, #comments a{background-color:inherit;}
 }
 
 /* Hover state animation applied here */
-.button:hover { 
+.button:hover {
   -webkit-animation: hover 1200ms linear 2 alternate;
   animation: hover 1200ms linear 2 alternate;
 }
@@ -410,9 +413,8 @@ table a, #comments a{background-color:inherit;}
 /* Active state animation applied here */
 .button:active {
   -webkit-animation: active 1200ms ease 1 alternate;
-  animation: active 1200ms ease 1 alternate; 
+  animation: active 1200ms ease 1 alternate;
   background: #5F9BE0;
 }
 .gray { background: #D2D2D2; }
 .gray:active { background: #b9b9b9; }
-

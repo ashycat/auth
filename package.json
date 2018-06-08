@@ -10,6 +10,9 @@
     "all": "npm run build && npm run test"
   },
   "dependencies": {
+    "angular-aria": "^1.7.0",
+    "angular-material": "^1.1.9",
+    "angular-messages": "^1.7.0",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
     "express": "^4.12.2",

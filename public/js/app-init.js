@@ -15,7 +15,7 @@
       'jquery-flot-pie' : '/bower_components/jquery-flot/jquery.flot.pie',
       'jquery-flot-curvedlines' : '/bower_components/flot.curvedlines/curvedLines',
       'jquery-flot-spline' : '/bower_components/jquery.flot.spline/index',
-      'angular' : '/bower_components/angular/angular',
+      'angular' : '/bower_components/angular/angular.min',
       'angular-animate' : '/bower_components/angular-animate/angular-animate.min',
       'angular-ui-router' : '/bower_components/angular-ui-router/release/angular-ui-router',
       'angular-bootstrap' : '/bower_components/angular-bootstrap/ui-bootstrap-tpls.min',
@@ -59,14 +59,18 @@
       'angular-ui-sortable' : '/bower_components/angular-ui-sortable/sortable.min',
       'angular-footable' : '/bower_components/angular-footable/dist/angular-footable.min',
       'ngRoute' : '/bower_components/angular-route/angular-route.min',
+      // 'ngMaterial' : '/bower_components/angular-material/angular-material.min',
+      // 'ngMessages' : '/bower_components/angular-messages/angular-messages.min',
+      // 'ngAria' : '/bower_components/angular-aria/angular-aria.min',
+
   };
-  
+
   var requireShims = {
       'jquery': { exports: '$' },
-      'datatables': { 
-        "deps": ['jquery'], 
-        "exports": '$.fn.dataTable' 
-      }, 
+      'datatables': {
+        "deps": ['jquery'],
+        "exports": '$.fn.dataTable'
+      },
       'angular' : { exports: 'angular', deps: ['jquery'] },
       'bootbox': ['jquery', 'bootstrap'],
       'bootstrap' : ['jquery'],
@@ -100,8 +104,13 @@
       'angular-ui-sortable' : ['angular'],
       'angular-footable' : ['angular'],
       'ngRoute' : ['angular'],
+      // 'ngMaterial' : ['angular'],
+      // 'ngMessages' : ['angular'],
+      //
+      // 'ngAria' : ['angular'],
+
   };
-  
+
   require.config({
     baseUrl: '/js',
     urlArgs: 'ts=' + (new Date()).getTime(),
@@ -109,44 +118,44 @@
     shim: requireShims,
     packages: ['app']
   });
-  
+
   require(['jquery', 'angular', 'app', 'app/config'], function($, angular, app) {
     angular.element(document).ready(function () {
       fixWrapperHeight();
       setBodySmall();
       app.init();
     });
-    
+
     $(window).bind("resize click", function () {
         setBodySmall();
         setTimeout(function () {
             fixWrapperHeight();
         }, 300);
     });
-    
+
     function fixWrapperHeight() {
-    
+
         // Get and set current height
         var headerH = 62;
         var navigationH = $("#navigation").height();
         var contentH = $(".content").height();
-    
+
         // Set new height when contnet height is less then navigation
         if (contentH < navigationH) {
             $("#wrapper").css("min-height", navigationH + 'px');
         }
-    
+
         // Set new height when contnet height is less then navigation and navigation is less then window
         if (contentH < navigationH && navigationH < $(window).height()) {
             $("#wrapper").css("min-height", $(window).height() - headerH  + 'px');
         }
-    
+
         // Set new height when contnet is higher then navigation but less then window
         if (contentH > navigationH && contentH < $(window).height()) {
             $("#wrapper").css("min-height", $(window).height() - headerH + 'px');
         }
     }
-    
+
     function setBodySmall() {
         if ($(this).width() < 769) {
             $('body').addClass('page-small');
@@ -156,5 +165,5 @@
         }
     }
   });
-  
+
 })();

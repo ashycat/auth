@@ -1,0 +1,62 @@
+<!-- Header -->
+<div id="header" ng-include="'views/common/header.html'"></div>
+
+<!-- Navigation -->
+<div id="menu" ng-include="'views/common/menu.html'"></div>
+
+<!-- Main Wrapper -->
+<div class="wrapper row2" ng-controller="admin/authreviewStatusPersonController">
+	<div class ="container clear">
+		<div class="content" >
+			<div >
+				<div>
+						<h2><span style="font-family:'Malgun Gothic';">권한검토 현황</span></h2>
+				</div>
+				<div>
+					<button><a ui-sref="admin/authreviewStatus">전체 현황</a></button>
+					<button><a ui-sref="admin/authreviewStatusDpt">미검토 부서</a></button>
+					<button><a ui-sref="admin/authreviewStatusPerson">미검토자</a></button>
+				</div>
+
+				<div>
+					<table cellpadding="1" cellspacing="1" class="table">
+						<colgroup>
+							<col/>
+							<col />
+
+						</colgroup>
+						<thead>
+							<tr>
+								<th>권한검토자</th>
+								<th>총계</th>
+								<th>완료</th>
+								<th>미완료</th>
+								<th>검토율(%)</th>
+
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr  ng-repeat="statue in status">
+
+                <td>[[statue.reviewer]]</td>
+                <td>[[statue.total]]</td>
+								<td>[[statue.comp]]</td>
+								<td>[[statue.incomp]]</td>
+								<td>[[statue.rate]]</td>
+
+
+
+              </tr>
+
+
+
+
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

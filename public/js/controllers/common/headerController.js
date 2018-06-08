@@ -1,19 +1,18 @@
 
-define(['angular', 'app', 'services/api/user/resources', 'services/api/message/resources',
-        'controllers/common/helpdesk/showMessageController', 'controllers/common/helpdesk/showNoticeController'],
+define(['angular', 'app'],
     function(angular, app) {
   'use strict';
   var forEach = angular.forEach;
   var isDefined = angular.isDefined;
   app.controller('common/headerController',
-  	['$scope', 'api/user/resources', 'api/message/resources', '$cookies', '$modal', '$location', '$log',
+  	['$scope','$cookies', '$modal', '$location', '$log',
      function($scope, $userResources, $MsgResources, $cookies, $modal, $location, $log) {
-  	  $log.debug('headerController');
+  	  console.log('headerController');
 
   	  $scope.roles = [];
   	  $scope.definedRole = {'user':'사용자', 'admin':'관리자', 'superadmin':'슈퍼관리자', 'operator':'운영자', 'broker':'주선소'};
   	  $scope.init = function() {
-  	    $log.debug(app_config.role);
+  	    console.log(app_config.role);
   	    // 현재 선택된 role 화면
   	    $scope.roles.push({key:app_config.type, name:$scope.definedRole[app_config.type], isActive:true});
   	    app_config.role.forEach(function(item) {

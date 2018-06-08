@@ -5,10 +5,10 @@ define(['angular', 'app'], function(angular, app) {
       link: function(scope, element) {
         var listener = function(event, toState, toParams, fromState, fromParams) {
           // Default title
-          var title = '화물프로';
+          var title = '삼성생명 권한검토';
           // Create your own title pattern
           if (toState.data && toState.data.pageTitle) {
-            title = '화물프로 | ' + toState.data.pageTitle;
+            title = '삼성생명 권한검토 | ' + toState.data.pageTitle;
           }
           $timeout(function() {
               element.text(title);

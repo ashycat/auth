@@ -12,11 +12,10 @@ define(['app','services/api/notice/resources' ,'services/api/message/resources' 
         function ($scope, $noticeResources, $messageResources, $modal, $log) {
           $log.debug('admin authreviewmail');
 
-          var param = {
-              limit : 10,
-              page : 0
-          };
+          $scope.months =
+          ['검토자', '싱글아이디', '부서명'];
 
+          $scope.name = "정수창";
           // $scope.getNoticeList = function() {
           //   $noticeResources.getNotices(param, function(result) {
           //     $scope.notices = result.contents;

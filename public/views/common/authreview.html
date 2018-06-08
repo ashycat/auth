@@ -10,7 +10,7 @@
 		<div class="content" >
 			<div >
 				<div>
-					<h2>권한검토 조회</h2>
+						<h2><span style="font-family:'Malgun Gothic';">권한검토 조회</span></h2>
 				</div>
 				<div>
 					<a href="#" class="button" ng-click="isclick()">업무시스템</a>
@@ -32,25 +32,51 @@
 						</colgroup>
 						<thead>
 							<tr>
-								<th>번호</th>
-								<th colspan="2">제목</th>
-								<th>게시일</th>
-								<th>게시자</th>
+								<th>seq</th>
+								<th>이름</th>
+								<th>녹스ID</th>
+								<th>부서</th>
+								<th>직무</th>
+								<th>직급</th>
+								<th>시스템</th>
+								<th>권한명</th>
+								<th>시작일</th>
+								<th>종료일</th>
+								<th>검토결과</th>
+
 							</tr>
 						</thead>
 						<tbody>
-							<tr ng-repeat="note in notices">
-								<td>[[note.id]]</td>
-								<td colspan="2">[[note.subject]]</td>
-								<td>[[note.created | date : 'yyyy-MM-dd']]</td>
-								<td>[[note.user_id]]</td>
+							<tr ng-repeat="auth in auths" >
+								<td>[[auth.seq]]</td>
+								<td>[[auth.name]]</td>
+								<td>[[auth.knoxID]]</td>
+								<td>[[auth.dpt]]</td>
+								<td>[[auth.work]]</td>
+								<td>[[auth.grade]]</td>
+								<td>[[auth.system]]</td>
+								<td>[[auth.authName]]</td>
+								<td>[[auth.startDate]] <!--| date : 'yyyy-MM-dd'--></td>
+								<td>[[auth.endDate]]</td>
+								<td>[[auth.result]]</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
+<div>
+	<!-- <input ng-model="q" id="search" class="form-control" placeholder="Filter text">
+	<select ng-model="pageSize" id="pageSize" class="form-control" ng-change="setItemsPerPage(pageSize)">
+			<option value="5">5</option>
+			<option value="10">10</option>
+			<option value="15">15</option>
+			<option value="20">20</option>
+	 </select> -->
+
+
+	<pagination total-items="auths" ng-model="currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="itemsPerPage"></pagination>
+</div>
+
 			</div>
 		</div>
 	</div>
 </div>
-
-

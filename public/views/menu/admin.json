@@ -25,9 +25,30 @@
    path: 'admin/authreviewStatus',
    roles: ['admin'],
    visible:true,
+   sub: [{
+     name: '미검토부서',
+     url: '/admin/authreviewStatusDpt',
+     path: 'admin/authreviewStatusDpt',
+     roles: ['admin'],
+     visible:true,
+     deps: [
+            'controllers/admin/authreviewStatusDptController'
+           ],
+     desc : ''
+   }, {
+     name: '미검토자',
+     url: '/admin/authreviewStatusPerson',
+     path: 'admin/authreviewStatusPerson',
+     roles: ['admin'],
+     visible:true,
+     deps: [
+            'controllers/admin/authreviewStatusPersonController'
+           ],
+     desc : '관리자'
+   }],
    deps: [
-   		'controllers/admin/role_group/grouproleListController',
-   		'controllers/admin/role_group/showGroupUserController',
+   		'controllers/admin/authreviewStatusDptController',
+   		'controllers/admin/authreviewStatusPersonController',
    		'controllers/admin/role_group/addRoleGroupController'
          ],
    desc : 'V1.0'

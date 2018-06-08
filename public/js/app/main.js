@@ -41,6 +41,10 @@
               'angular-ui-sortable',
               'angular-footable',
               'ngRoute',
+              // 'ngMaterial',
+              // 'ngMessages',
+              // 'ngAria',
+
               ];
 
   var modules = [
@@ -73,6 +77,10 @@
                  'ui.sortable',              // AngularJS ui-sortable
                  'ui.footable',               // FooTable
                  'ngRoute',
+                 // 'ngMaterial',
+                 // 'ngMessages',
+                 // 'ngAria',
+
                  ];
   if (ie8 || ie9) {
     deps.push('modules/placeholder');
